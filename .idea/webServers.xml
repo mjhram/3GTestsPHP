@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="6b4d619e-fc24-4e59-bb6a-35ece84ee8a7" name="3GTests on GoDaddy" url="http://ftp.ttaxi1.com">
+        <fileTransfer host="ftp.ttaxi1.com" port="21" rootFolder="/public_html/3gtests" password="dfdadfcbdfd9dfd9dfe3dfc4dfdedfc5df9b" username="mjhram">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
