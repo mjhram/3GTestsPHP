@@ -22,5 +22,6 @@ if($a) {
 	} else {
 		mysqli_query($GLOBALS["___mysqli_ston"], "ROLLBACK");
 		echo 'Could not add. Check your data.\n';
+		echo $b;
 	}
 ?>
