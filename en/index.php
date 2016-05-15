@@ -321,7 +321,7 @@ Hello
 			$page  = $_GET["page"]; 
 		} else { 
 			$page=1; 
-		}; 
+		};
 		// get user info:
 		/*$sSql="SELECT * FROM members WHERE id={$_SESSION['id']}";
 		$member_row=mysql_fetch_assoc(mysql_query($sSql));*/
