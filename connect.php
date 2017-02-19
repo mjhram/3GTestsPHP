@@ -4,10 +4,10 @@
 
 /* Database config */
 
-$db_host		= 'localhost';
-$db_user		= 'mjhram3g_db';
-$db_pass		= 'passInto1';
-$db_database	= '3gTestsDB'; 
+$db_host		= 'ajerlitaxicom.ipagemysql.com';
+$db_user		= 'mjhram';
+$db_pass		= 'passinto';
+$db_database	= 'speedtest_db'; 
 
 /* End config */
 

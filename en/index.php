@@ -241,13 +241,8 @@ Hello
 				if($_GET['act']=='sort') {
 					echo "<li><a href='index.php'>Home</a></li>";
 				}
-			$file = "../files_db/net Test.apk"; 
 			?>
-			<li><a href="download.php?file=
-			<?php 
-			echo $file;
-			?>
-			">APK(12 Feb)</a></li>
+			<li><a href='https://play.google.com/store/apps/details?id=com.Mohammad.ac.SpeedTest&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="42"/></a></li>
 				<?php
 				$stemp = http_build_query($_GET, '', '&amp;');
 				//print_r($stemp);
