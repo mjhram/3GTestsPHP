@@ -42,7 +42,7 @@ define ("site_name",'export.php');
 	$export = mysqli_query($GLOBALS["___mysqli_ston"], $sSql) or die ( "Sql error : " . ((is_object( )) ? mysqli_error( ) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) );
  	$fields = (($___mysqli_tmp = mysqli_num_fields( $export )) ? $___mysqli_tmp : false);
 	//write headers:
-	$data = "No, DateTime, phone No, IMSI, Network, Type, Mobile State, Cell, LAC, Region, RNC, Signal Strength, Min Rate, Max Rate\n";
+	$data = "No, DateTime, phone No, IMSI, Network, Type, Mobile State, Wifi SSID, Cell, LAC, Region, RNC, Signal Strength, Min Rate, Max Rate\n";
 	$len = strlen($data);
 	$l = fwrite($fileh, $data, $len);
 
@@ -67,6 +67,7 @@ define ("site_name",'export.php');
 			"IDEN", "EVDO_B", "LTE", "EHRPD", "HSPAP", "GSM");
 	    $line .= $networkType[$row['netType']] .", ";
 	    $line .= $row['mobileState'] .", ";
+		$line .= $row['wifissid'] .", ";
 	    	$tmp = str_pad($row['cid_3g'], 5, "0", STR_PAD_LEFT);
 	    $line .= $tmp .", ";
 	    	$tmp = str_pad($row['lac'], 5, "0", STR_PAD_LEFT);
