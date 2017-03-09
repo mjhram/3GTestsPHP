@@ -5,6 +5,8 @@ require '../functions.php';
 session_name('aTTS');
 session_start();
 
+define ("site_name",'export.php');
+
 //function export() 
 {
   $file_name = '3gtests.csv';
@@ -15,9 +17,28 @@ session_start();
 		$_SESSION['msg'][]= "Error: couldnot create {$fileh}";
 		return;
 	}
-	
+	if(!$_SESSION['usr'] && !$_GET['dev']) {
+		//header("Location:login_register.php");
+		exit;
+	}
+	////////////////// log
+	$aSql = "INSERT INTO log(user, details, ip,url,sitename) VALUES(";
+	if(!$_SESSION['usr']) {
+				$aSql .= "-1,";
+	} else {
+		$aSql .= "{$_SESSION['id']},";
+	}
+	$aSql .= "'Site Access', '{$_SERVER['REMOTE_ADDR']}','{$_SERVER['REQUEST_URI']}','".site_name."')";
+	mysqli_query($GLOBALS["___mysqli_ston"], $aSql);
+	/////////////////// 
 	//query data:
 	$sSql = "SELECT 3gTests.*, tbl_lac.region FROM 3gTests LEFT JOIN tbl_lac ON 3gTests.lac = tbl_lac.lac ";
+	if($_GET['dev']) {
+		$sSql .= " WHERE deviceId = '" . $_GET['dev'] . "' ";
+	} else {
+		$sSql .= " WHERE deviceId<>'355355055584832' OR deviceId<>'353415067009434'";
+	}
+	$sSql .= " ORDER BY  `3gTests`.`No` DESC ";
 	$export = mysqli_query($GLOBALS["___mysqli_ston"], $sSql) or die ( "Sql error : " . ((is_object( )) ? mysqli_error( ) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) );
  	$fields = (($___mysqli_tmp = mysqli_num_fields( $export )) ? $___mysqli_tmp : false);
 	//write headers:

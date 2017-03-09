@@ -241,21 +241,22 @@ Hello
 				if($_GET['act']=='sort') {
 					echo "<li><a href='index.php'>Home</a></li>";
 				}
-			?>
-			<li><a href='https://play.google.com/store/apps/details?id=com.Mohammad.ac.SpeedTest&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="42"/></a></li>
-				<?php
 				$stemp = http_build_query($_GET, '', '&amp;');
 				//print_r($stemp);
 				if(!empty($stemp)) {
 					$stemp = "?".$stemp;
 				}
 				echo "<li><a href='index.php{$stemp}'>Refresh</a></li>";
-				?>
-				
-			<?php
 			}
 			?>
-			<li><a href="export.php">Data</a></li>
+			<li><a href='https://play.google.com/store/apps/details?id=com.Mohammad.ac.SpeedTest&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="42"/></a></li>
+			<?php
+			$exp = "export.php";
+			if(isset($_GET['dev'])) {
+				$exp .= "?dev=" . $_GET['dev'];
+			}
+			echo "<li><a href='{$exp}'>Data</a></li>";
+			?>
 		</ul>
 <hr />
 </div>		

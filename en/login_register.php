@@ -270,12 +270,9 @@ mysqli_query($GLOBALS["___mysqli_ston"], $aSql);
 <!-- Panel -->
 <div id="toppanel">
 	<ul id="menu">
-		<li><a href="download.php?file=
-			<?php 
-			$file = "../files_db/net Test.apk";
-			echo $file;
-			?>
-		">Download</a></li>
+				<li><a href='https://play.google.com/store/apps/details?id=com.Mohammad.ac.SpeedTest&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="42"/></a></li>
+
+		
 	</ul>
 	<div style ="text-align: left"> 
 		Hello <?php 
