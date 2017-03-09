@@ -302,6 +302,7 @@ Hello
 		<th>Network1-Network2</th>
 		<th>Type1-Type2</th>
 		<th>State</th>
+		<th>Wifi SSID</th>
 		<th>Cell</th>
 		<th>LAC</th>
 		<th>Region</th>
@@ -408,6 +409,11 @@ Hello
 				<td>
 					<?php
 					echo $row['mobileState'];
+					?>
+				</td>
+				<td>
+					<?php
+					echo $row['wifissid'];
 					?>
 				</td>
 				<td>
