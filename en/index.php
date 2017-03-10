@@ -304,7 +304,7 @@ Hello
 		<th>State</th>
 		<th>Wifi SSID</th>
 		<th>Cell</th>
-		<th>LAC</th>
+		<th>LAC/TAC</th>
 		<th>Region</th>
 		<th>RNC</th>
 		<th>Signal Strength</th>
