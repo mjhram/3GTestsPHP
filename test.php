@@ -3,6 +3,7 @@
 
 {
     define ("site_name",'test.php');
+    $res = "failed";
     $aSql = "INSERT INTO log(user, details, result, ip,url,sitename) VALUES(";
     if(!$_SESSION['usr']) {
         $aSql .= "-1,";
