@@ -42,7 +42,7 @@ if($a) {
 	} else {
 		$aSql .= "{$_SESSION['id']},";
 	}
-	$pst = var_export($_POST, true); 
+	$pst = var_export($_POST, true);  
 	$aSql .= "'addTest', '{$res}', '{$_SERVER['REMOTE_ADDR']}','{$_SERVER['REQUEST_URI']}','".site_name."', '{$pst}')";
 	mysqli_query($GLOBALS["___mysqli_ston"], $aSql);
 }
