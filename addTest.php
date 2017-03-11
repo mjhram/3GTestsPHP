@@ -37,7 +37,7 @@ if($a) {
 	} else {
 		$aSql .= "{$_SESSION['id']},";
 	}
-	$aSql .= "'addTest', {$res}, '{$_SERVER['REMOTE_ADDR']}','{$_SERVER['REQUEST_URI']}','".site_name."')";
+	$aSql .= "'addTest', '{$res}', '{$_SERVER['REMOTE_ADDR']}','{$_SERVER['REQUEST_URI']}','".site_name."')";
 	mysqli_query($GLOBALS["___mysqli_ston"], $aSql);
 }
 ?>
