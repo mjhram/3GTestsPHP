@@ -42,8 +42,12 @@ if($a) {
 	} else {
 		$aSql .= "{$_SESSION['id']},";
 	}
-	$pst = var_export($_POST, true);
-	$pst = mysqli_real_escape_string($GLOBALS["___mysqli_ston"], $pst);
+	if(empty($_POST['deviceId'])) {
+		$pst = var_export($_POST, true);
+		$pst = mysqli_real_escape_string($GLOBALS["___mysqli_ston"], $pst);
+	} else {
+		$pst = null;
+	}
 
 	$aSql .= "'addTest', '{$res}', '{$_SERVER['REMOTE_ADDR']}','{$_SERVER['REQUEST_URI']}','".site_name."', '{$pst}')";
 	mysqli_query($GLOBALS["___mysqli_ston"], $aSql);
