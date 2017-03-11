@@ -11,7 +11,8 @@ $res = "failed";
     } else {
         $aSql .= "{$_SESSION['id']},";
     }
-    $pst = mysql_real_escape_string(var_export($_POST, true));
+    $pst = var_export($_POST, true);
+    $pst = mysqli_real_escape_string($GLOBALS["___mysqli_ston"], $pst);
     $aSql .= "'addTest', '{$res}', '{$_SERVER['REMOTE_ADDR']}','{$_SERVER['REQUEST_URI']}','".site_name."', '{$pst}')";
     mysqli_query($GLOBALS["___mysqli_ston"], $aSql);
     echo $aSql;
