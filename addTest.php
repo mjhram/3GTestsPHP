@@ -24,7 +24,7 @@ $b="INSERT INTO 3gTests(`deviceId`,`imsi`, `phoneNumber`, `imei`,`netOperator`, 
      		" '{$_POST['lon']}', '{$_POST['lat']}', '{$_POST['minTxRate']}', '{$_POST['maxTxRate']}', '{$_POST['avTxRate']}', '{$_POST['minRxRate']}', '{$_POST['maxRxRate']}', '{$_POST['avRxRate']}',  '{$_POST['brand']}', '{$_POST['manuf']}', '{$_POST['model']}', '{$_POST['product']}',".
      		" '{$_POST['deviceId2']}', '{$_POST['imsi2']}', '{$_POST['phoneNum2']}', '{$_POST['netOperator2']}', '{$_POST['netName2']}', '{$_POST['netType2']}', '{$_POST['netClass2']}', '{$_POST['SignalStrengths']}'".
      		", '{$latency}', '{$_POST['nei']}', '{$_POST['tmp']}')";
-	//echo $b; 
+	//echo $b;
 	$a=mysqli_query($GLOBALS["___mysqli_ston"], $b);
 if($a) {
 	mysqli_query($GLOBALS["___mysqli_ston"], "COMMIT");
@@ -42,7 +42,7 @@ if($a) {
 	} else {
 		$aSql .= "{$_SESSION['id']},";
 	}
-	$pst = implode(",",$_POST);
+	$pst = var_export($_POST, true);
 	$aSql .= "'addTest', '{$res}', '{$_SERVER['REMOTE_ADDR']}','{$_SERVER['REQUEST_URI']}','".site_name."', '{$pst}')";
 	mysqli_query($GLOBALS["___mysqli_ston"], $aSql);
 }
