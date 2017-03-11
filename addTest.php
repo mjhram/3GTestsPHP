@@ -1,10 +1,13 @@
 <?php
 define('INCLUDE_CHECK',true);
+define ("site_name",'addTest.php');
 
 require 'connect.php';
 
+// Starting the session
 session_name('aTTS');
 session_start();
+
 $a = mysqli_query($GLOBALS["___mysqli_ston"], "START TRANSACTION");
 $b="INSERT INTO 3gTests(`deviceId`,`imsi`, `phoneNumber`, `imei`,`netOperator`, `netName`, `netType`, `netClass`,`phoneType`,`mobileState`, `wifissid`, `cid`, `cid_3g`, `rnc`, `lac`, `rssi`,".
 		" `lon`, `lat`, `minTxRate`, `maxTxRate`, `avTxRate`, `minRxRate`, `maxRxRate`, `avRxRate`, `Brand`, `Manufacturer`, `Model`, `Product`".
@@ -19,10 +22,22 @@ $b="INSERT INTO 3gTests(`deviceId`,`imsi`, `phoneNumber`, `imei`,`netOperator`, 
 	//echo $b;
 	$a=mysqli_query($GLOBALS["___mysqli_ston"], $b);
 if($a) {
-		mysqli_query($GLOBALS["___mysqli_ston"], "COMMIT");
+	mysqli_query($GLOBALS["___mysqli_ston"], "COMMIT");
+	$res = "success";
+} else {
+	mysqli_query($GLOBALS["___mysqli_ston"], "ROLLBACK");
+	echo 'Could not add. Check your data.\n';
+	echo $b;
+	$res = "failed";
+}
+{
+	$aSql = "INSERT INTO log(user, details, result, ip,url,sitename) VALUES(";
+	if(!$_SESSION['usr']) {
+		$aSql .= "-1,";
 	} else {
-		mysqli_query($GLOBALS["___mysqli_ston"], "ROLLBACK");
-		echo 'Could not add. Check your data.\n';
-		echo $b;
+		$aSql .= "{$_SESSION['id']},";
 	}
+	$aSql .= "'addTest', {$res}, '{$_SERVER['REMOTE_ADDR']}','{$_SERVER['REQUEST_URI']}','".site_name."')";
+	mysqli_query($GLOBALS["___mysqli_ston"], $aSql);
+}
 ?>
