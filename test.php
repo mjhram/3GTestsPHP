@@ -1,14 +1,15 @@
 <?php
     require 'connect.php';
-    $sSql = "SELECT * FROM 3gTests";
-    $rs_result = mysqli_query($GLOBALS["___mysqli_ston"], $sSql);
-    if($rs_result) {
-        $total_records = mysqli_num_rows($rs_result);
-        echo "--->";
-        echo $total_records;
+
+{
+    $aSql = "INSERT INTO log(user, details, result, ip,url,sitename) VALUES(";
+    if(!$_SESSION['usr']) {
+        $aSql .= "-1,";
+    } else {
+        $aSql .= "{$_SESSION['id']},";
     }
-    echo " 0-------------------------->";
-    echo $rs_result;
-		print_r($rs_result);
-echo("Error description2: " . mysqli_error($GLOBALS["___mysqli_ston"]));
+    $aSql .= "'addTest', {$res}, '{$_SERVER['REMOTE_ADDR']}','{$_SERVER['REQUEST_URI']}','".site_name."')";
+    mysqli_query($GLOBALS["___mysqli_ston"], $aSql);
+    echo $aSql;
+}
 ?>
