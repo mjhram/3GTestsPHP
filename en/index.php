@@ -292,7 +292,7 @@ Hello
 	<col width="15%" /> <!-- max Tx rate -->
 	
 	<tr>
-		<th>No</th>
+		<th>No</th> 
 		<th>Date\Time</th>
 		<th>Latitude,Longitude</th>
 		<th>Handset Model</th>
