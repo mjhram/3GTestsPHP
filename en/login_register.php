@@ -303,10 +303,9 @@ mysqli_query($GLOBALS["___mysqli_ston"], $aSql);
 	<div id="panel" style="left: 0px; top: 0px">
 		<div class="content clearfix">
 			<div class="left">
-				<img src="..//images//logo.png" alt="Logo" />
 				<h1>Internet Test</h1>
 				<h2>Welcome to 3G Test</h2>		
-				<p class="grey">You can show your handset history from any browser using "3gtest.net76.net/en/index.php?dev=xxxxxxx". where xxxx is your device ID. This is shown in the address when you press "Show History" from your handset</p>
+				<p class="grey">You can show your handset history from any browser using "ajerlitaxi.com/3gtests/en/index.php?dev=xxxxxxx". where xxxx is your device ID. This is shown in the address when you press "Show History" from your handset</p>
 
 			</div>
 
