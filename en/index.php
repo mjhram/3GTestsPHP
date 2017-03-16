@@ -278,7 +278,6 @@ Hello
 	<col width="12%" /> <!-- Date/Time.-->
 	<col width="20%" /> <!-- Latitude, Longitude -->
 	<col width="10%" /> <!-- Model-->
-	<col width="10%" />  <!-- phone num-->
 	<col width="10%" />  <!-- imsi -->
 	<col width="8%" /> <!-- net name -->
 	<col width="6%" />  <!-- net type -->
@@ -297,8 +296,7 @@ Hello
 		<th>Date\Time</th>
 		<th>Latitude,Longitude</th>
 		<th>Handset Model</th>
-		<th>Phone</th>
-		<th>IMSI1-IMSI2</th>
+		<th>Operator1-2</th>
 		<th>Network1-Network2</th>
 		<th>Type1-Type2</th>
 		<th>State</th>
@@ -384,12 +382,7 @@ Hello
 				
 				<td>
 					<?php
-					echo $row['phoneNumber'];
-					?>
-				</td>
-				<td>
-					<?php
-					echo $row['imsi']."-".$row['imsi2'];
+					echo $row['netOperator']."-".$row['netOperator2'];
 					?>
 				</td>
 				<td>
