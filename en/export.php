@@ -13,7 +13,7 @@ define ("site_name",'export.php');
   $file_path = "../files_db/" . $file_name; 
 
  	//$fileh = fopen ($file_path, "wb");
-	$fileh = gzopen ($file_path, "wb");
+	$fileh = gzopen ($file_path.'.gz', "wb");
 	if(!$fileh){
 		$_SESSION['msg'][]= "Error: couldnot create {$fileh}";
 		return;
