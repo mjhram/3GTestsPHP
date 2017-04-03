@@ -10,10 +10,10 @@ define ("site_name",'export.php');
 //function export() 
 {
   $file_name = '3gtests.csv';
-  $file_path = "../files_db/" . $file_name; 
+  $file_path = "../files_db/" . $file_name.'.gz';
 
  	//$fileh = fopen ($file_path, "wb");
-	$fileh = gzopen ($file_path.'.gz', "wb");
+	$fileh = gzopen ($file_path, "wb");
 	if(!$fileh){
 		$_SESSION['msg'][]= "Error: couldnot create {$fileh}";
 		return;
