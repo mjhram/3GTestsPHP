@@ -12,7 +12,8 @@ define ("site_name",'export.php');
   $file_name = '3gtests.csv';
   $file_path = "../files_db/" . $file_name; 
 
- 	$fileh = fopen ($file_path, "wb");
+ 	//$fileh = fopen ($file_path, "wb");
+	$fileh = gzopen ($file_path, "wb");
 	if(!$fileh){
 		$_SESSION['msg'][]= "Error: couldnot create {$fileh}";
 		return;
@@ -44,7 +45,8 @@ define ("site_name",'export.php');
 	//write headers:
 	$data = "No, DateTime, phone No, IMSI, Network, Type, Mobile State, Wifi SSID, Cell, LAC, Region, RNC, Signal Strength, Min Rate, Max Rate\n";
 	$len = strlen($data);
-	$l = fwrite($fileh, $data, $len);
+	//$l = fwrite($fileh, $data, $len);
+	$l = gzwrite($fileh, $data, $len);
 
 	$i = 0;
 	while( $row = mysqli_fetch_assoc( $export ) )
@@ -82,9 +84,12 @@ define ("site_name",'export.php');
 	    $line .= $row['minRxRate'] .", ";
 	    $line .= $row['maxRxRate'] ."\n";   
 		$len = strlen($line);
-		$l = fwrite($fileh, $line, $len);
+		//$l = fwrite($fileh, $line, $len);
+		$l = gzwrite($fileh, $line, $len);
 	}
 	
-	fclose($fileh);
+	//fclose($fileh);
+	gzclose($fileh);
+
 	header("Location:download.php?file={$file_path}");
 }
