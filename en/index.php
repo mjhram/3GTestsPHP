@@ -275,7 +275,7 @@ Hello
 	
 <table width="100%" border="1">
 	<col width="3%" /> <!-- No.-->
-	<col width="13%" /> <!-- Date/Time.-->
+	<col width="15%" /> <!-- Date/Time.-->
 	<!--col width="20%" /> < Latitude, Longitude -->
 	<col width="10%" /> <!-- Model-->
 	<col width="10%" />  <!-- imsi -->
