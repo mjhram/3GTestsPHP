@@ -51,7 +51,7 @@ if(isset($_GET['logoff']))
 }
 
 if(!$_SESSION['items_per_page'])
-	$_SESSION['items_per_page'] = 32;
+	$_SESSION['items_per_page'] = 100;
 	
 ?>
 
@@ -275,8 +275,8 @@ Hello
 	
 <table width="100%" border="1">
 	<col width="3%" /> <!-- No.-->
-	<col width="12%" /> <!-- Date/Time.-->
-	<col width="20%" /> <!-- Latitude, Longitude -->
+	<col width="20%" /> <!-- Date/Time.-->
+	<!--col width="20%" /> < Latitude, Longitude -->
 	<col width="10%" /> <!-- Model-->
 	<col width="10%" />  <!-- imsi -->
 	<col width="8%" /> <!-- net name -->
@@ -294,7 +294,6 @@ Hello
 	<tr>
 		<th>No</th> 
 		<th>Date\Time</th>
-		<th>Latitude,Longitude</th>
 		<th>Handset Model</th>
 		<th>Operator1-2</th>
 		<th>Network1-Network2</th>
@@ -369,11 +368,7 @@ Hello
 					}
 					?>
 				</td>
-				<td>
-					<?php
-					echo $row['lat']. "," . $row['lon'];
-					?>
-				</td>
+
 				<td>
 					<?php
 					echo $row['Model'];
