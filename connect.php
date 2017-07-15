@@ -4,7 +4,7 @@
 
 /* Database config */
 
-$db_host		= 'ajerlitaxicom.ipagemysql.com';
+$db_host		= 'localhost';
 $db_user		= 'mjhram';
 $db_pass		= 'passinto';
 $db_database	= 'speedtest_db'; 
